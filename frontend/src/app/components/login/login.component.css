@@ -1,0 +1,20 @@
+.container{
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 3px solid #e5eaeb;
+  width: 30%;
+  height: 50%;
+  padding: 4%;
+  padding-top: 2%;
+  border-radius: 10px;
+  margin-left: 35%;
+  margin-top: 10%;
+  align-items: center;
+  position:absolute;
+}
+h1{
+  margin-left: 3cm;
+  color: rgba(1,1,1,0.8);
+}
+form{
+  margin-left: 1cm;
+}

@@ -1,0 +1,124 @@
+<nav class="navbar navbar-expand navbar-white">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/login">Login</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/dashboard">Dashboard</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/newproject">NewProject</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/projects">Projects</a><br>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <h2 style="">
+    NewProject
+  </h2><br>
+  <div >
+    <form [formGroup]="NewProjectForm" (ngSubmit)="onSubmit()" style="margin-left: 0.2cm">
+
+      <div class="form-group">
+      <textarea formControlName="Theme" rows = "3" cols = "80" name = "Theme" placeholder="Theme" >
+    Enter Theme here...
+  </textarea><br>
+      </div>
+      <div>
+        <div class=" form-group" style="display: inline">
+          <label for="Reason">Reason :</label>&nbsp;
+          <select formControlName="Reason" id="Reason" name="Reason" style="width: 5cm">
+            <option value="Business">Business</option>
+            <option value="Dealership">Dealership</option>
+            <option value="Transport">Transport</option>
+          </select>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="form-group" style="display:inline;">
+          <label for="type1">Type :</label>&nbsp;
+          <select formControlName="type1" id="type1" name="type1" style="width: 5cm">
+            <option value="Internal">Internal</option>
+            <option value="External">External</option>
+            <option value="Vendor">Vendor</option>
+          </select>
+        </div>
+      </div><br>
+
+      <div>
+        <div class="form-group"style="display:inline;">
+          <label for="Division">Division :</label>&nbsp;
+          <select formControlName="Division" id="Division" name="Division" style="width: 5cm">
+            <option value="Compressor">Compressor</option>
+            <option value="Filters">Filters</option>
+            <option value="Pumps">Pumps</option>
+            <option value="Glass">Glass</option>
+            <option value="Water Heater">Water Heater</option>
+          </select>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="form-group" style="display:inline;">
+          <label for="Category">Category :</label>&nbsp;
+          <select formControlName="Category" id="Category" name="Category" style="width: 5cm">
+            <option value="Quality A">Quality A</option>
+            <option value="Quality B">Quality B</option>
+            <option value="Quality C">Quality C</option>
+            <option value="Quality D">Quality D</option>
+          </select>
+        </div>
+      </div><br>
+
+      <div>
+        <div class="form-group" style="display:inline;">
+          <label for="Priority">Priority :</label>&nbsp;
+          <select formControlName="Priority" id="Priority" name="Priority" style="width: 5cm">
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+          </select>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="form-group" style="display:inline;">
+          <label for="Department">Department :</label>&nbsp;
+          <select formControlName="Department" id="Department" name="Department" style="width: 5cm">
+            <option value="Strategy">Strategy</option>
+            <option value="Finance">Finance</option>
+            <option value="Quality">Quality</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Stores">Stores</option>
+            <option value="HR">HR</option>
+          </select>
+        </div>
+      </div><br>
+
+      <div>
+        <div class="form-group" style="display:inline;">
+          <label for="Location">Location :</label>&nbsp;
+          <select formControlName="Location" id="Location" name="Location" style="width: 5cm">
+            <option value="Pune">Pune</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Calcutta">Calcutta</option>
+            <option value="Bangalore">Bangalore</option>
+          </select>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="form-group" style="display:inline;">
+          <label for="start">Start date:</label>&nbsp;
+
+          <input formControlName="start" type="date" id="start" name="start" style="width: 5cm"><br>
+        </div>
+      </div><br>
+
+      <div>
+        <div class="form-group" style="display:inline;">
+          <label for="end">End date :</label>&nbsp;
+
+          <input formControlName="end" type="date" id="end" name="end" style="width: 5cm">
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="form-group" style="display: inline">
+          Status: Registered
+        </div>
+      </div>
+      <br>
+
+      <button class="btn btn-outline-success"  type="submit" style="margin-left: 8cm" [disabled]="!NewProjectForm.valid">Register</button>
+    </form>
+  </div>
+
+</div>
+

@@ -1,0 +1,17 @@
+.container{
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 3px solid #e5eaeb;
+  width: 50%;
+  height: 75%;
+  padding: 2%;
+  border-radius: 10px;
+  margin-left: 25%;
+  align-items: center;
+
+
+  position: absolute;
+}
+h2{
+  text-align: center;
+  color: rgba(1,1,1,0.8)
+}

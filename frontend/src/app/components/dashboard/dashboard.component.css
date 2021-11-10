@@ -1,0 +1,15 @@
+.counters{
+  font-size: larger;
+  margin-left: 10cm;
+}
+.container{
+  background-color: rgba(0,0,0,0.05);
+  width: 80%;
+}
+h2{
+  text-align: center;
+  color: rgba(1,1,1,0.8)
+}
+hr{
+  border-top: dotted 1px;
+}

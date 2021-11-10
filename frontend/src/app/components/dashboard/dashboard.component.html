@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand navbar-white">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/login">Login</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/dashboard">Dashboard</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/newproject">NewProject</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/projects">Projects</a><br>
+  </div>
+</nav>
+
+<h2>
+  DashBoard
+</h2>
+
+<hr/>
+
+<div class="counters" >
+  Registered :  {{details.registered }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Closed :  {{details.closed }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Cancelled :  {{details.cancelled }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  CloserDelay :  {{details.closerDelay }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Running :  {{details.running }}<br>
+</div>
+
+<hr/><br>
+
+<div class="container" >
+  <div style="display: block">
+    <canvas baseChart
+            [datasets]="[
+    {data: [this.details.QualityRegistered - this.details.QualityCancel , this.details.MaintenanceRegistered - this.details.MaintenanceCancel,this.details.HRRegistered - this.details.HRCancel,this.details.StrategyRegistered - this.details.StrategyCancel,this.details.StoresRegistered - this.details.StoresCancel,this.details.FinanceRegistered - this.details.FinanceCancel], label: 'Registered'},
+    {data: [this.details.QualityCompleted, this.details.MaintenanceCompleted,this.details.HRCompleted,this.details.StrategyCompleted,this.details.StoresCompleted,this.details.FinanceCompleted], label: 'Completed'}
+  ]"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="'bar'">
+    </canvas>
+  </div>
+</div>
+<br>
+<br>
+<br>

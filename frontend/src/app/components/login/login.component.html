@@ -1,0 +1,34 @@
+
+
+<div class="container">
+
+  <h1>
+    Login
+  </h1><br>
+
+  <div>
+
+    <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()"  >
+
+      <div class="form-group">
+        <label for="Email">Email : </label>&nbsp;&nbsp;
+        <input id="Email" type="text" formControlName="Email" required="true">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password   : </label>&nbsp;&nbsp;
+        <input id="password" type="text" formControlName="password" required="true">
+      </div>
+
+      <p>Complete the form to enable button.</p>
+      <button  class="btn btn-outline-success" type="submit" [disabled]="!LoginForm.valid">Submit</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+
+

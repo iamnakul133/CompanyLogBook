@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand navbar-white">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/login">Login</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/dashboard">Dashboard</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/newproject">NewProject</a>&nbsp;
+    <a class="nav-item nav-link" routerLink="/projects">Projects</a><br>
+  </div>
+</nav>
+<h2 style="text-align:center;color: rgba(1,1,1,0.8)">
+  Projects List
+</h2>
+<br>
+<div >
+  <div class="form-group" style="padding-left: 1cm;width: 30%" >
+    <label class="sr-only">Search:</label>
+    <input class="form-control" type="text" [(ngModel)]="queryText" (ngModelChange)="Search()" placeholder="Search" >
+  </div>
+
+  <div style="background-color: rgba(0,0,0,0.05)" >
+    <table  class="table"  >
+      <tr *ngFor="let project_list of projects | paginate: { id: 'listing_pagination', itemsPerPage: 5  , currentPage: page ,totalItems:totalProjects} " >
+        <td>
+          <ul style="list-style-type:none;">
+            <li>{{project_list.Theme}}</li>
+            <li style="font-size: small">{{project_list.start}} to {{project_list.end}} </li>
+          </ul>
+        </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.Reason}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.Category}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.Division}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.Department}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.Priority}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.type1}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.Location}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td>{{project_list.status}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <button style="border-color: chartreuse"  for="status" value="running" (click)="ChangeStatus(project_list._id,'running')" >
+          start
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button style="border-color: cornflowerblue" for="status" value="closed" (click)="ChangeStatus(project_list._id,'closed')">
+          close
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button style="border-color: crimson" for="status"  value="cancelled"(click)="ChangeStatus(project_list._id,'cancelled')">cancel</button>
+      </tr>
+
+
+    </table>
+  </div>
+
+  <div style="text-align: center">
+    <pagination-controls id="listing_pagination" itemPerPage="5" (pageChange)="page= $event"></pagination-controls>
+  </div>
+</div>
+
+
+
